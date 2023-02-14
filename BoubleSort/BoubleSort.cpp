@@ -1,20 +1,69 @@
-// BoubleSort.cpp : This file contains the 'main' function. Program execution begins and ends there.
-//
-
 #include <iostream>
-
+#include <string>
+void Decreamenting(int array[], int arraySize);
+void Increamenting(int array[], int arraySize);
+using namespace std;
 int main()
 {
-    std::cout << "Hello World!\n";
+    int arraySise;
+    cout << "inter the size of the array :";
+    cin >> arraySise;
+    int array[arraySise];
+    for (int i = 0; i < arraySise; i++)
+    {
+        cout << "filling the array : ";
+        cin >> array[i];
+    }
+    string method;
+    cout << "Decreamenting or Increamenting ? ";
+    cin >> method;
+    if (method == "Decreamenting")
+    {
+        cout << "doing Decreamenting" << endl;
+        Decreamenting(array, arraySise);
+        cout << endl << "Done" << endl;
+
+    }
+    else if (method == "Increamenting")
+    {
+        cout << "doing Increamenting" << endl;
+        Increamenting(array, arraySise);
+        cout << endl << "Done" << endl;
+    }
+    return 0;
 }
 
-// Run program: Ctrl + F5 or Debug > Start Without Debugging menu
-// Debug program: F5 or Debug > Start Debugging menu
-
-// Tips for Getting Started: 
-//   1. Use the Solution Explorer window to add/manage files
-//   2. Use the Team Explorer window to connect to source control
-//   3. Use the Output window to see build output and other messages
-//   4. Use the Error List window to view errors
-//   5. Go to Project > Add New Item to create new code files, or Project > Add Existing Item to add existing code files to the project
-//   6. In the future, to open this project again, go to File > Open > Project and select the .sln file
+void Increamenting(int array[], int arraySize)
+{
+    for (int i = 0; i < arraySize - 1; i++)
+    {
+        for (int j = i + 1; j <= arraySize - 1; j++)
+        {
+            if (array[i] > array[j])
+            {
+                int temp = array[i];
+                array[i] = array[j];
+                array[j] = temp;
+            }
+        }
+    }
+    for (int i = 0; i < arraySize; i++)
+        cout << array[i] << " ";
+}
+void Decreamenting(int array[], int arraySize)
+{
+    for (int i = 0; i < arraySize - 1; i++)
+    {
+        for (int j = i + 1; j <= arraySize - 1; j++)
+        {
+            if (array[i] < array[j])
+            {
+                int temp = array[i];
+                array[i] = array[j];
+                array[j] = temp;
+            }
+        }
+    }
+    for (int i = 0; i < arraySize; i++)
+        cout << array[i] << " ";
+}
