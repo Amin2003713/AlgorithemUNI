@@ -1,19 +1,25 @@
-#include <iostream>
+﻿#include <iostream>
 #include <string>
+// اعلان توابع  
 void Decreamenting(int array[], int arraySize);
 void Increamenting(int array[], int arraySize);
 using namespace std;
 int main()
 {
+    // تعریف متغیر برای سایز ارایه 
     int arraySise;
+    // نمایش و دریافت سایز ارایه 
     cout << "inter the size of the array :";
     cin >> arraySise;
+    // تعریف ارایه 
     int array[arraySise];
+    // گرفتن ورودی ها با حلقه 
     for (int i = 0; i < arraySise; i++)
     {
         cout << "filling the array : ";
         cin >> array[i];
     }
+    // تعریف متقیر به نوع رشته برای انتخاب بین صعودی یا نذولی 
     string method;
     cout << "Decreamenting or Increamenting ? ";
     cin >> method;
@@ -33,8 +39,10 @@ int main()
     return 0;
 }
 
+// بخش توابع تعریفی 
 void Increamenting(int array[], int arraySize)
 {
+    // مرتب سازی ارایه صعودی
     for (int i = 0; i < arraySize - 1; i++)
     {
         for (int j = i + 1; j <= arraySize - 1; j++)
@@ -47,6 +55,7 @@ void Increamenting(int array[], int arraySize)
             }
         }
     }
+    // نمایش ارایه مرتب شده 
     for (int i = 0; i < arraySize; i++)
         cout << array[i] << " ";
 }
